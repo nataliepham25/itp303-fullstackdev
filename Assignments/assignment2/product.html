@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doe Lashes</title>
+
+    <style>
+
+body {
+    text-align: center;
+    font-family: 'Noto Sans';
+}
+
+li {
+    text-align: left;
+}
+#promo {
+    background-color: lightblue;
+    width: 60%;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 2px solid blue;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin: auto;
+}
+
+#promo:hover {
+    background-color: #FFB6C1;
+}
+
+#header {
+    text-align: center;
+    background-color: #CBC3E3;
+    height: 130px;
+    font-size: 32pt;
+    margin-bottom: 40px;
+}
+
+.top #image__col img {
+    width: 90%;
+    max-width: 400px;
+    padding: 3%;
+}
+
+.top #about .ratings {
+    width: 50%;
+}
+
+#about {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about img {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.price {
+    color: darkred;
+}
+
+#gray {
+    color: gray;
+}
+
+.product {
+    width: 400px;
+    height: 400px;
+    text-align: center;
+}
+.icon {
+    height: 90%;
+    width: 90%;
+    object-fit: scale-down;
+    background-position: center;
+    background-size: 100% 100%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.product {
+    border: 1px solid black;
+    width: 90%;
+    max-width: 300px;
+    box-sizing: border-box;
+    height: 21%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.hidden__text {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    color: transparent;
+}
+
+.hidden__text:hover {
+    color: white;
+    background-color: rgba(0, 0 , 0,0.2);
+}
+
+#related {
+    width: 80%;
+    margin: auto;
+}
+
+.product > img {
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+h1 {
+    margin-top: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.top {
+    margin: auto;
+    width: 80%;
+}
+
+.nomobile {
+    display: none;
+}
+
+.top {
+    max-width: 1000px;
+}
+p{
+    text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .mobile {
+        display: none;
+    }
+    .nomobile {
+        display: block;
+    }
+    .product {
+        float: left;
+        width: 40%;
+        box-sizing: border-box;
+        margin: 5%;
+    }
+       .clearfloat {
+        clear: both;
+    }
+    .left__col {
+        float: left;
+        width: 50%;
+    }
+    .right__col {
+        float: left;
+        width: 50%;
+    }
+    .right__col::after {
+        clear: both;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .end::after {
+        clear: both;
+    }
+    .related__first, .related__second {
+        width: 100%;
+    }
+    #related {
+        margin: auto;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .related__first, .related__second {
+        box-sizing: border-box;
+        float: left;
+    }
+    .related__second::after {
+        clear: both;
+    }
+    .end::after {
+        clear: none;
+    }
+    .related__first, .related__second {
+        width: 50%;
+    }
+    #related {
+        margin: auto;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <div id = "header">
+<h1> Natalie's Lash Store </h1>
+    </div>
+    <div class="top">
+        <div class="left__col">
+            <h2 class="mobile">Subtle Starter Pack</h2>
+            <div id="image__col">
+                <img src="images/subtlestarter.png" alt="Starter Pack">
+            </div>
+            <div id="promo">Bundled valued at $67.50, get this set for $12.50 off</div>
+        </div>
+        <div id="about" class="right__col">
+            <h2 class="nomobile">Subtle Starter Pack</h2>
+            <h3 class="price"><span id="gray">Price:</span> $55.00</h3>
+            <img class="ratings" src="images/ratings.png" alt="ratings">
+            <p>*Disclaimer all of this is taken from my favorite lash site <a href ="doelashes.com">Doe Lashes</a>* <p>
+                <p>This pack is made for your everyday occasion, whether it be sweating it out building your abs, or a lazy lounge day in your PJ's. This kit contains a variety of five different soft lightweight lash styles ranging from subtle and wispy to fuller, longer silk fibers. Our lashes will give you the perfect opportunity to explore and create looks that will have all eyes on you.</p>
+                <p>The Subtle Starter Pack includes:</p>
+            <ul>
+                <li>Fairy Dust</li>
+                <li>Really really lowkey</li>
+                <li>Morning Dew</li>
+                <li>Cloud 9</li>
+                <li>Silver Lining</li>
+                <li>Doe Lash Applicator(blue)</li>
+            </ul>
+        </div>
+        <div class="clearfloat"></div>
+    </div>
+
+    <div id="related">
+        <h2>Related Products</h2>
+        <div class="related__first">
+            <div class="product">
+                <img src="images/cloud9.png" alt ="Cloud 9">
+                <div class="hidden__text">cloud nine</div>
+            </div>
+            <div class="product end noend">
+                <img src="images/moonlight.png" alt = "Moonlight">
+                <div class="hidden__text"><span>moonlight</span></div>
+            </div>
+        </div>
+        <div class="related__second">
+            <div class="product">
+                <img src="images/uwulash.png" alt = "uwu lash">
+                <div class="hidden__text">uwu lash</div>
+            </div>
+            <div class="product end noend">
+                <img src="images/cloudlamp.png" alt = "Cheeky Cloud Lamp">
+                <div class="hidden__text">cheeky cloud lamp</div>
+            </div>
+        </div>
+        <div id="footer">
+        Made by Natalie Pham for ITP 303
+    </div>
+    </div>
+
+
+    
+
+</body>
+</html>
