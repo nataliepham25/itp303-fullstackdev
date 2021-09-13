@@ -1,0 +1,90 @@
+body {
+    text-align: center;
+    background-color: #808080;
+    color: white;
+}
+
+.content {
+    margin: auto;
+}
+
+.banner {
+    background-image: url("images/banner.png");
+    height: 300px;
+    text-align: center;
+    color: white;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner div {
+    font-size: 28pt;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.banner div .subtext {
+    font-size: 16pt;
+}
+
+.conent-box > img {
+    width: 100%;
+}
+
+footer {
+    background-color: #637485;
+    color: white;
+    padding: 20px;
+}
+
+.content-box {
+    margin: 30px;
+}
+
+.textbox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.member > h2 {
+    margin-bottom: 10px;
+}
+
+.member > p {
+    width: 90%;
+    margin: auto;
+}
+.member > img {
+    width: 90%;
+    margin: 5%;
+}
+
+.member > button {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#dark {
+    background-color: #637485;
+    color: white;
+}
