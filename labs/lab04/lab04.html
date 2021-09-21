@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Photo Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .clearfloat {
+            clear: both;
+        }
+        
+        .section {
+            width: 600px;
+            margin: auto;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .thumbnail {
+            border: 1px solid #000;
+            width: 138px;
+            height: 138px;
+            margin: 5px;
+            float: left;
+            overflow: hidden;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+        
+        .thumbnail:hover {
+            opacity: 1.0
+        }
+        
+        .thumbnail>img {
+            height: 100%;
+        }
+        
+        #main-img-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        #main-img-container img {
+            max-width: 100%;
+        }
+        
+        #main-img-container p {
+            font-size: 1.5em;
+        }
+        /* Desktops */
+        
+        @media (max-width: 1199px) {}
+        /* Tablets */
+        
+        @media (max-width: 991px) {}
+        /* Phones */
+        
+        @media (max-width: 767px) {
+            #thumbnail-wrapper {
+                width: 300px;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gallery" class="section">
+        <h1>USC Image Gallery</h1>
+
+        <div id="thumbnail-wrapper">
+            <div class="thumbnail">
+                <img src="images/thumb_1.jpg" alt="USC Village">
+            </div>
+
+            <div class="thumbnail">
+                <img src="images/thumb_2.jpg" alt="Tutor Campus Center">
+            </div>
+
+            <div class="thumbnail">
+                <img src="images/thumb_3.jpg" alt="VKC">
+            </div>
+
+            <div class="thumbnail">
+                <img src="images/thumb_4.jpg" alt="Fountain">
+            </div>
+
+            <div class='clearfloat'></div>
+
+        </div>
+        <!-- #thumbnail-wrapper -->
+
+        <div id="main-img-container">
+            <img src="images/thumb_1.jpg" alt="USC Village" id="main-img">
+            <p>Usc Village</p>
+        </div>
+        <!-- #main-img-container -->
+
+    </div>
+    <!-- .section -->
+    <script>
+        let thumbnails = document.querySelectorAll(".thumbnail");
+        const reset = () => {
+            thumbnails.forEach((thumb) => {
+                thumb.style.opacity = "0.6";
+                thumb.style.border = "1px solid #000";
+            })
+        }
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.onclick = () => {
+                reset();
+                thumbnail.style.opacity = "1";
+                thumbnail.style.border = "1px solid red";
+                document.getElementById("main-img").src = thumbnail.children[0].src;
+                document.getElementById("main-img").alt = thumbnail.children[0].alt;
+                document.querySelector("#main-img-container > p").innerHTML = thumbnail.children[0].alt;
+            }
+        });
+    </script>
+</body>
+
+</html>
