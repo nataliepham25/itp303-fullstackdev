@@ -1,0 +1,125 @@
+html {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier', monospace;
+    background-color: #6731B4;
+    color: whitesmoke;
+}
+
+#header {
+    width: 800px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #301934;
+    box-shadow: 5px 5px 7px #192929;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#todolistBox {
+    margin-top: 50px;
+    width: 600px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #301934;
+    box-shadow: 5px 5px 7px #192929;
+}
+
+.itemText {
+    cursor: pointer;
+    flex: 1;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.task:hover {
+    background-color: #E6E6FA;
+}
+
+.square {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.square:hover {
+    color: coral;
+}
+
+.struck {
+    text-decoration: line-through;
+    color: #EA39CD;
+}
+
+form {
+    padding: 10px;
+    border-radius: 9999px;
+    background-color: rgb(17, 24, 23);
+    box-shadow: 5px 5px 7px #192929;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: whitesmoke;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
+
+select {
+    margin-top: 10px;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    color: whitesmoke;
+    outline: none;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+.fas {
+    border-radius: 999px;
+    padding: 2px;
+}
+.fas:hover {
+    background-color: #CF99F0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: lightgray;
+    opacity: 1; /* Firefox */
+  }
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: lightgray;
+  }
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: lightgray;
+  }
