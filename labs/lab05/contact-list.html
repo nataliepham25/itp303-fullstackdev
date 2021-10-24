@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact List using Objects</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <h1 class="col-12">Contacts</h1>
+            <h2 class="col-12 mt-4">New Contact</h2>
+            <div class="col-12 mt-4">
+                <form id="contact-form">
+                    <div class="form-row">
+
+                        <div class="col-12 mt-2 col-sm-3 mt-sm-0">
+                            <label for="fname" class="sr-only">First Name:</label>
+                            <input type="text" class="form-control" id="fname" placeholder="First Name">
+                        </div>
+                        <!-- .col -->
+
+                        <div class="col-12 mt-2 col-sm-3 mt-sm-0">
+                            <label for="lname" class="sr-only">Last Name:</label>
+                            <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                        </div>
+                        <!-- .col -->
+
+                        <div class="col-12 mt-2 col-sm-3 mt-sm-0">
+                            <label for="email" class="sr-only">Email:</label>
+                            <input type="text" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <!-- .col -->
+
+                        <div class="col-12 mt-2 col-sm-auto mt-sm-0">
+                            <button role="button" type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                        <!-- .col -->
+
+                    </div>
+                    <!-- .form-row -->
+                </form>
+            </div>
+            <!-- .col -->
+        </div>
+        <!-- .row -->
+
+        <div class="row">
+            <h2 class="col-12 mt-4">List:</h2>
+        </div>
+        <!-- .row -->
+
+        <div class="row">
+            <div class="col-12 mt-3">
+                <button id="show-three-btn" class="btn btn-outline-primary mb-3">Show First Three Contacts</button>
+                <button id="show-all-btn" class="btn btn-outline-primary mb-3">Show All Contacts</button>
+                <button id="delete-btn" class="btn btn-outline-danger mb-3">Delete All</button>
+            </div>
+            <!-- .col -->
+        </div>
+        <!-- .row -->
+
+        <div class="row">
+            <div class="col-12 mt-3">
+                <ul class="list-group" id="contact-list">
+                    <!-- Below is the template that all contacts should follow -->
+                    <!-- <li class="list-group-item">Trojan, Tommy (ttrojan@usc.edu)</li> -->
+                </ul>
+            </div>
+            <!-- .col -->
+
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+
+    <script>
+        // Use this array to keep track of contacts
+        let contacts = [];
+
+        document.querySelector("#contact-form").onsubmit = function(e) {
+            e.preventDefault();
+            const newContact = {
+                fname: null,
+                lname: null,
+                email: null
+            }
+            if (!document.querySelector("#fname").value) {
+                document.querySelector("#fname").classList.add("is-invalid");
+            } else {
+                document.querySelector("#fname").classList.remove("is-invalid");
+                newContact.fname = document.querySelector("#fname").value;
+
+            }
+            if (!document.querySelector("#lname").value) {
+                document.querySelector("#lname").classList.add("is-invalid");
+            } else {
+                document.querySelector("#lname").classList.remove("is-invalid");
+                newContact.lname = document.querySelector("#lname").value;
+            }
+            if (!document.querySelector("#email").value) {
+                document.querySelector("#email").classList.add("is-invalid");
+            } else {
+                document.querySelector("#email").classList.remove("is-invalid");
+                newContact.email = document.querySelector("#email").value;
+            }
+            if (newContact.fname && newContact.lname && newContact.email) {
+                contacts.push(newContact);
+            }
+        }
+
+        document.querySelector("#show-three-btn").onclick = function(e) {
+            document.querySelector("#contact-list").innerHTML = "";
+            for (let i = 0; i < 3; i++) {
+                if (contacts[i]) {
+                    const newLi = document.createElement("li");
+                    newLi.innerHTML = `${contacts[i].lname}, ${contacts[i].fname} (${contacts[i].email})`;
+                    newLi.classList.add("list-group-item");
+                    console.log(newLi);
+                    document.querySelector("#contact-list").appendChild(newLi);
+                }
+            }
+        }
+
+        document.querySelector("#show-all-btn").onclick = function(e) {
+            document.querySelector("#contact-list").innerHTML = "";
+            for (let i = 0; i < contacts.length; i++) {
+                if (contacts[i]) {
+                    const newLi = document.createElement("li");
+                    newLi.innerHTML = `${contacts[i].lname}, ${contacts[i].fname} (${contacts[i].email})`;
+                    newLi.classList.add("list-group-item");
+                    console.log(newLi);
+                    document.querySelector("#contact-list").appendChild(newLi);
+                }
+            }
+        }
+
+        document.querySelector("#delete-btn").onclick = function(e) {
+            document.querySelector("#contact-list").innerHTML = "";
+            contacts = [];
+        }
+    </script>
+
+</body>
+
+</html>
